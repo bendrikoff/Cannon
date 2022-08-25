@@ -25,17 +25,12 @@ public class Cannon : MonoBehaviour
     private void Update()
     {
         _delay -= Time.deltaTime;
-        if (Input.GetButton("Fire1"))
-        {
-            if (_delay <= 0)
-            {
-                Fire();   
-            }
-        } 
     }
 
     public void Fire()
     {
+        if(_delay > 0) return;
+
         var ball = _ballsPool.Dequeue();
         ball.SetActive(true);
         var rbBall = ball.GetComponent<Rigidbody>();
