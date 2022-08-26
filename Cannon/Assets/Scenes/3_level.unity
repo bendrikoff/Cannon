@@ -2752,8 +2752,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 003379dccfdfec349b9570a8d7890303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startBalls: 10
-  _ballsToWin: 0
+  _startBalls: 30
+  _ballsToWin: 20
 --- !u!4 &1739717762
 Transform:
   m_ObjectHideFlags: 0

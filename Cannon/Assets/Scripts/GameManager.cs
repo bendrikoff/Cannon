@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
         if (currentBalls>0)
         {
             UIManager.Instance.ChangeLeftBallsCount(currentBalls);
+            SoundManager.Instance.PlayClickSound();
         }
         else
         {

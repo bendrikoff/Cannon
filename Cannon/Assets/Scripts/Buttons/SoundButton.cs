@@ -11,14 +11,13 @@ public class SoundButton : MonoBehaviour,IClickable
     [SerializeField] private Sprite _soundOffSprite;
     
     private Image _soundImage;
-
-
-    private bool _soundOn;
+    private bool _soundOn => SoundManager.Instance.SoundIsOn;
 
     private void Start()
     {
-        _soundOn = true;
         _soundImage = GetComponent<Image>();
+        _soundImage.sprite = _soundOn ? _soundOnSprite : _soundOffSprite;
+
     }
 
     public void OnClick()
@@ -28,8 +27,7 @@ public class SoundButton : MonoBehaviour,IClickable
 
     private void SwitchSound()
     {
-        _soundOn = !_soundOn;
-        
+        SoundManager.Instance.SwitchSound();
         _soundImage.sprite = _soundOn ? _soundOnSprite : _soundOffSprite;
     }
 }
