@@ -39,7 +39,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 25, y: 164}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3870310170880045306
 CanvasRenderer:
@@ -90,8 +90,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 55
-  m_Center: {x: -0.20018768, y: -4.066747e-12, z: 0}
+  m_Radius: 40.942528
+  m_Center: {x: -0.18624878, y: 4.8788265e-12, z: 0}
 --- !u!54 &-4234861769783038018
 Rigidbody:
   m_ObjectHideFlags: 0

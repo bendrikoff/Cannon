@@ -17,7 +17,7 @@ public class InGameInputController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButtonDown("Fire1"))
         {
             RaycastHit2D aHit = new RaycastHit2D();
             aHit = Physics2D.Raycast(_camera.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);

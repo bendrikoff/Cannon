@@ -7,10 +7,12 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
 
-    public static Level CurrentLevel;
     public int GetCountStartBalls => _startBalls;
+    public int GetBallsToWin => _ballsToWin;
     
-    [SerializeField] public int _startBalls;
+    [SerializeField] private int _startBalls;
+
+    [SerializeField] private int _ballsToWin;
     
     public static GameManager Instance;
     
@@ -27,23 +29,24 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         UIManager.Instance.ChangeLeftBallsCount(_startBalls);
+        
     }
 
     public void AddOneScore()
     {
         _coins++;
         UIManager.Instance.ChangeCoinsCount(_coins);
+        if (_coins>=_ballsToWin)
+        {
+            Success();
+        }
     }
 
     public void Fire(int currentBalls)
     {
-        if (currentBalls>0 )
+        if (currentBalls>0)
         {
             UIManager.Instance.ChangeLeftBallsCount(currentBalls);
-        }
-        else if (_loseBalls == 0) 
-        {
-            Success();
         }
         else
         {
@@ -64,7 +67,7 @@ public class GameManager : MonoBehaviour
 
     private void Success()
     {
-        SceneManager.LoadScene("Menu");
+        UIManager.Instance.OpenWinPanel();
     }
     
 }

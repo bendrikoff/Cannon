@@ -19,7 +19,6 @@ public class Level : MonoBehaviour
 
     public void OnClick()
     {
-        GameManager.CurrentLevel = this;
         SceneManager.LoadScene(_sceneName);
     }
 
