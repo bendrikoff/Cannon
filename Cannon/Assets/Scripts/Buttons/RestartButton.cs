@@ -11,8 +11,6 @@ namespace Buttons
         {
             var scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(scene.name);
-            Debug.Log("Нажал Restart");
-
         }
     }
 }

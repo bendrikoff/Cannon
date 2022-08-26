@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Level : MonoBehaviour
+public class Level : MonoBehaviour,IClickable
 {
     [SerializeField] private List<GameObject> _starsIcons;
     
@@ -13,9 +13,6 @@ public class Level : MonoBehaviour
     [SerializeField] private int _levelNumber;
 
     [SerializeField] private int _stars;
-    void Start()
-    {
-    }
 
     public void OnClick()
     {

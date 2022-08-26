@@ -13,6 +13,7 @@ public class InGameInputController : MonoBehaviour
     private void Start()
     {
         _camera=Camera.main;
+        _isCannonNotNull=_cannon!=null;
     }
 
     private void Update()
@@ -21,13 +22,19 @@ public class InGameInputController : MonoBehaviour
         {
             RaycastHit2D aHit = new RaycastHit2D();
             aHit = Physics2D.Raycast(_camera.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+
+           
+            if (aHit.collider != null)
+            {
+                Debug.Log(aHit.collider.name);
+            }
             
             if (aHit.collider != null&&
                 aHit.collider.gameObject.TryGetComponent(out IClickable clickable))
             {
                 clickable.OnClick();
             }
-            else 
+            else if(_isCannonNotNull)
             {
                 _cannon.Fire();
             }
