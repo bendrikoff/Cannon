@@ -10,7 +10,6 @@ public class BorderTrigger : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             GameManager.Instance.AddOneLoseBall();
-            Debug.Log("Border");
         }
     }
 }
