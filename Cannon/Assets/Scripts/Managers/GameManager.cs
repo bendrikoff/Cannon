@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
 
     public int GetCountStartBalls => _startBalls;
@@ -14,17 +14,11 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private int _ballsToWin;
     
-    public static GameManager Instance;
-    
+   
     private int _coins;
 
     private int _loseBalls;
 
-
-    private void Awake()
-    {
-        Instance=this;
-    }
 
     private void Start()
     {

@@ -4,20 +4,18 @@ using System.Collections.Generic;
 using System.ComponentModel.Design;
 using UnityEngine;
 
-public class SoundManager : MonoBehaviour
+public class SoundManager : Singleton<SoundManager>
 {
    [SerializeField] private AudioSource _clickAudio;
    [SerializeField] private AudioSource _backgroundAudio;
-
-   public static SoundManager Instance;
    public bool SoundIsOn => _soundOn;
 
    private bool _soundOn;
 
-   private void Awake()
+   protected override void Awake()
    {
       if (Instance != null) return;
-      Instance = this;
+      base.Awake();
       Init();
    }
 

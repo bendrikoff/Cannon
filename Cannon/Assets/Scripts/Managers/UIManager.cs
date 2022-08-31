@@ -4,19 +4,15 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class UIManager : MonoBehaviour
+public class UIManager : Singleton<UIManager>
 {
    [SerializeField] private GameObject _winPanel;
    
    [SerializeField] private TextMeshProUGUI _leftBallsCountText;
    
    [SerializeField] private TextMeshProUGUI _coinsBallsCountText;
-   
-   public static UIManager Instance;
-
    private void Start()
    {
-      Instance = this;
       ChangeCoinsCount(0);
    }
 
